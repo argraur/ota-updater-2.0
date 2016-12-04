@@ -63,7 +63,6 @@ public class SettingsActivity extends PreferenceActivity implements DialogCallba
 
     private Preference accountPref;
     private CheckBoxPreference notifPref;
-    private CheckBoxPreference wifidlPref;
     private CheckBoxPreference autodlPref;
     private Preference resetWarnPref;
     private Preference prokeyPref;
@@ -142,9 +141,6 @@ public class SettingsActivity extends PreferenceActivity implements DialogCallba
         notifPref = (CheckBoxPreference) findPreference("notif_pref");
         notifPref.setChecked(cfg.getShowNotif());
 
-        wifidlPref = (CheckBoxPreference) findPreference("wifidl_pref");
-        wifidlPref.setChecked(cfg.getWifiOnlyDl());
-
         autodlPref = (CheckBoxPreference) findPreference("autodl_pref");
         autodlPref.setChecked(cfg.getAutoDlState());
 
@@ -200,8 +196,6 @@ public class SettingsActivity extends PreferenceActivity implements DialogCallba
             showAccountDialog();
         } else if (preference == notifPref) {
             cfg.setShowNotif(notifPref.isChecked());
-        } else if (preference == wifidlPref) {
-            cfg.setWifiOnlyDl(wifidlPref.isChecked());
         } else if (preference == autodlPref) {
             if (cfg.hasProKey()) {
                 cfg.setAutoDlState(autodlPref.isChecked());
