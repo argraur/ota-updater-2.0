@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion '21.0.1'
-
+    compileSdkVersion 25
+    buildToolsVersion '25.0.1'
+    multiDexEnabled true
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 19
+        targetSdkVersion 25
     }
 
     signingConfigs {
